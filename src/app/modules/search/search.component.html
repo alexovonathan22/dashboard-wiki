@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="box">
+        <form (submit)="onformSubmit($event)">
+            <input class="input" 
+                   placeholder="Type valid search term" 
+                   (input)="term=$event.target.value" />
+            
+                   <br><br>
+            <button type="submit" (click)='fetchSearchResult()'>Submit</button>
+        </form>
+    </div>
+    <app-result *ngIf='result.length' [result]="result"></app-result>
+</div>

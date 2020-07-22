@@ -1,0 +1,26 @@
+<br><br>
+<table class="table is-striped">
+
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Word Count</th>
+        <th>Snippet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let res of result">
+        <td>
+            <a
+              target="_blank"
+              [href]="'https://en.wikipedia.org?curid=' + res.pageid"
+            >
+              {{ res.title }}
+            </a>
+          </td>
+          <td>{{ res.wordcount }}</td>
+          <td [innerHTML]="res.snippet"></td>
+      </tr>
+    </tbody>
+  </table>
+  
